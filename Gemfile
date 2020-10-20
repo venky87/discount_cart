@@ -36,9 +36,31 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# API framework
+gem 'grape'
+gem "grape-entity"
+
+# API Documentation
+gem 'grape-swagger'
+gem 'grape-swagger-rails'
+gem 'grape-swagger-ui'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'fuubar'
+  gem 'hashie'
+  gem 'json_spec'
+  gem 'pry-rails'
+  gem 'rspec-its'
+  gem 'rspec-rails'
+  gem 'rspec-retry', require: false
+  gem 'rspec-sidekiq'
+  gem 'rspec_junit_formatter', '0.2.2'
+  gem 'shoulda-matchers', require: false
+  gem 'timecop'
 end
 
 group :development do
