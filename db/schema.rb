@@ -10,39 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_19_102448) do
+ActiveRecord::Schema.define(version: 2020_10_22_121400) do
 
-  create_table "cart_items", force: :cascade do |t|
-    t.integer "items_id"
-    t.integer "cart_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
-    t.index ["items_id"], name: "index_cart_items_on_items_id"
-  end
+# Could not dump table "cart_items" because of following StandardError
+#   Unknown type '' for column 'item_id'
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "discount_rules", force: :cascade do |t|
-    t.string "symbol"
-    t.string "rule"
-    t.float "rate"
-    t.integer "discount_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["discount_id"], name: "index_discount_rules_on_discount_id"
-  end
-
   create_table "discounts", force: :cascade do |t|
     t.integer "discount_type"
-    t.string "discountable_type"
-    t.integer "discountable_id"
+    t.float "discount"
+    t.integer "count"
+    t.integer "operator"
+    t.integer "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["discountable_type", "discountable_id"], name: "index_discounts_on_discountable_type_and_discountable_id"
+    t.index ["item_id"], name: "index_discounts_on_item_id"
   end
 
   create_table "items", force: :cascade do |t|
