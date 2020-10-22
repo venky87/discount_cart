@@ -3,6 +3,9 @@ module API
     class Base < Grape::API
       version 'v1', using: :header, vendor: 'cybrilla', cascade: true
       mount Items::Data
+      mount Discounts::ItemDiscounts
+      mount Discounts::CartDiscounts
+      mount Carts::Data
 
       add_swagger_documentation(
         api_version: 'v1',
