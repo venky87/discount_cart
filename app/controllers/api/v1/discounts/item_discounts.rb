@@ -27,7 +27,7 @@ module API
               error!('Item not found', 404) unless item
 
               discount = item.discounts.new(
-                discount_type: params[:type],
+                discount_type: params[:discount_type],
                 discount: params[:discount],
                 count: params[:count],
                 operator: params[:operator]
@@ -56,7 +56,7 @@ module API
 
             discount.assign_attributes(
               {
-                discount_type: params[:type],
+                discount_type: params[:discount_type],
                 discount: params[:discount],
                 count: params[:count],
                 operator: params[:operator]
