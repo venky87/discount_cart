@@ -24,7 +24,7 @@ module Discounts
             'discount_type = ? and count <= ?',
             Discount.discount_types['flat_rate'],
             grouped_items[item_id].count
-          ).order('count asc').first
+          ).order('count desc').first
 
           if discount.nil?
             @discounted_price += item.price
@@ -42,7 +42,7 @@ module Discounts
             'discount_type = ? and count <= ?',
             Discount.discount_types['percentage'],
             grouped_items[item_id].count
-          ).order('count asc').first
+          ).order('count desc').first
           next unless discount
 
           @discounted_price += percent_discount(item.price, discount.discount)

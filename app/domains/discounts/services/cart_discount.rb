@@ -39,7 +39,7 @@ module Discounts
       end
 
       def cart_discount
-        @cart_discount ||= Discount.where("item_id is NULL and count <= ?", @cart_price).order('count asc').first
+        @cart_discount ||= Discount.where("item_id is NULL and count <= ?", @cart_price).order('count desc').first
       end
     end
   end
