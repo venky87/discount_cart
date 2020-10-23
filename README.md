@@ -4,10 +4,10 @@
 * Have created service object to fetch discounts based on multiples or basket price 
 * Rspec for discount calculation is added
 * Run the app by running
-### Installation
+## Installation
 - Clone the repository
 - Do bundle install
-  ## DB migration
+  ### DB migration
    ```sh
    $ bundle exec rake db:create
    $ bundle exec rake db:migrate
